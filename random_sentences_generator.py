@@ -11,7 +11,7 @@ def random_sentence(light, neutral, dark, meetings, fights, meet_actions, fight_
     fight_action = random.choice(fight_actions)
 
     if fight_place == 'Death Star':
-        return f"{main_character} and {side_character} met on {meet_action}, but were caught by {villain_character} and taken prisoners on the Death Star!"
+        return f"{main_character} and {side_character} met on {meet_place}, but were caught by {villain_character} and taken prisoners on the Death Star!"
     elif fight_place == 'Sarlacc Pit':
         return f"Poor {main_character} and {side_character} fell into a Sarlacc Pit! {villain_character} is definitely having a laugh."
     else:
