@@ -1,7 +1,12 @@
 import random
 
-
+# Define function/s
 def random_sentence(light, neutral, dark, meetings, fights, meet_actions, fight_actions):
+    """
+    A function used to generate a random sentence based on lists containing words.
+    Returns a string with the generated random sentence.
+    """
+
     main_character = random.choice(light)
     side_character = random.choice(neutral)
     villain_character = random.choice(dark)
@@ -18,6 +23,7 @@ def random_sentence(light, neutral, dark, meetings, fights, meet_actions, fight_
         return f"{main_character} and {side_character} meet on {meet_place} to {meet_action} and then {fight_action} {villain_character} on {fight_place}"
 
 
+# Create words lists
 light_characters = ['Chewbacca', 'Han Solo', 'Leia', 'Luke Skywalker', 'Anakin Skywalker', 'Jar Jar Binks', 'Mace Windu', 'Obi-Wan Kenobi', 'Padme Amidala', 'Yoda']
 neutral_characters = ['Boba Fett', 'C-3PO', 'Jabba the Hutt', 'R2-D2', 'Ahsoka Tano', 'Fennec Shand']
 dark_characters = ['Darth Vader', 'Darth Sidious', 'Darth Maul', 'Count Dooku', 'General Grievous', 'Asajj Ventress']
@@ -28,11 +34,12 @@ fighting_actions = ['defeat', 'ally with', 'ambush', 'spar with', 'podrace with'
 
 # Example result - {Chewbacca} and {Boba Fett} meet on {Coruscant} to {scheme a plan} and then {defeat} {Darth Vader} on {Mustafar}
 
+# Logic and output
 while True:
     print(random_sentence(light_characters, neutral_characters, dark_characters, meeting_places, fighting_places, meeting_actions, fighting_actions))
     print()
-    user_input = input("Press [Enter] to generate a new one or write 'Finish' to exit the program: ")
+    user_input = input("Press \033[1;32m[Enter]\033[0;0m to generate a new one or write \033[1;32m'Finish'\033[0;0m to exit the program: ") # ANSI green colour \ bold
     print()
     if user_input.lower() == 'finish':
-        print('May the Force be with you!')
+        print('\033[3;36mMay the Force be with you!\033[0;0m') # ANSI cyan colour \ italic
         break
